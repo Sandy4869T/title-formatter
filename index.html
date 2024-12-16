@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标题格式化工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- docx.js 库 -->
+    <script src="https://unpkg.com/docx@8.2.3/build/index.js"></script>
+    <!-- FileSaver.js 库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>标题格式化工具</h1>
+            <p class="subtitle">将编号文档转换为清晰的标题格式</p>
+        </header>
+        
+        <div class="converter-container">
+            <!-- 左侧输入区域 -->
+            <div class="input-section">
+                <h2>输入文本</h2>
+                <textarea id="inputText" placeholder="在此粘贴带有编号的文本..."></textarea>
+                <p class="shortcut-tip">快捷键：按 Ctrl + Enter 快速转换</p>
+            </div>
+            
+            <!-- 右侧预览区域 -->
+            <div class="output-section">
+                <h2>预览结果</h2>
+                <div id="outputText" class="output-box"></div>
+                <div class="button-group">
+                    <button id="copyPlainBtn" class="secondary-btn">复制纯文本</button>
+                    <button id="copyHtmlBtn" class="secondary-btn">复制富文本</button>
+                    <button id="exportBtn" class="primary-btn">导出Word文档</button>
+                </div>
+                <p class="tip">提示：如果需要保留标题格式，请使用"导出Word文档"功能</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>使用说明：粘贴带有编号的文本，点击转换按钮即可获得格式化后的标题文本。</p>
+        </footer>
+    </div>
+
+    <!-- 固定在底部的转换按钮 -->
+    <div class="floating-button">
+        <button id="convertBtn" class="primary-btn">转换格式</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
